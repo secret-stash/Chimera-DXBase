@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Common.hpp" />
+    <ClInclude Include="UI\AbstractOption.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\AbstractSubmenu.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\BaseOption.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\BaseSubmenu.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\BoolOption.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\ChooseOption.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\NumberOption.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\PlayerSubmenu.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\RegularOption.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\RegularSubmenu.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\SubOption.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIManager.hpp">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_dx11.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_win32.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="GTA\Invoker\Invoker.hpp">
+      <Filter>GTA\Invoker</Filter>
+    </ClInclude>
+    <ClInclude Include="GTA\Invoker\CrossMap.hpp">
+      <Filter>GTA\Invoker</Filter>
+    </ClInclude>
+    <ClInclude Include="GTA\Invoker\Types.hpp">
+      <Filter>GTA\Invoker</Filter>
+    </ClInclude>
+    <ClInclude Include="GTA\Invoker\Natives.hpp">
+      <Filter>GTA\Invoker</Filter>
+    </ClInclude>
+    <ClInclude Include="GTA\Script\Script.hpp">
+      <Filter>GTA\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="GTA\Script\ScriptManager.hpp">
+      <Filter>GTA\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="GTA\Script\ScriptGlobal.hpp">
+      <Filter>GTA\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="GTA\Script\ScriptHook.hpp">
+      <Filter>GTA\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="GTA\Script\ScriptFiber.hpp">
+      <Filter>GTA\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D\D3DRenderer.hpp">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D\D3DScript.hpp">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooking\Hooking.hpp">
+      <Filter>Hooking</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooking\NativeHooking.hpp">
+      <Filter>Hooking</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooking\VMTHook.hpp">
+      <Filter>Hooking</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Game.hpp">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Memory.hpp">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\CustomText.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Logger.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Settings.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Timer.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Util.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\Lists.hpp">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\MainScript.hpp">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\BytePatch.hpp">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\GTA.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\FeatureManager.hpp">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Local\Local.hpp">
+      <Filter>Features\Local</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Math.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Common.cpp" />
+    <ClCompile Include="UI\UIManager.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_dx11.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_tables.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="GTA\Invoker\Invoker.cpp">
+      <Filter>GTA\Invoker</Filter>
+    </ClCompile>
+    <ClCompile Include="GTA\Invoker\CrossMap.cpp">
+      <Filter>GTA\Invoker</Filter>
+    </ClCompile>
+    <ClCompile Include="GTA\Script\Script.cpp">
+      <Filter>GTA\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="GTA\Script\ScriptManager.cpp">
+      <Filter>GTA\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="GTA\Script\ScriptGlobal.cpp">
+      <Filter>GTA\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="GTA\Script\ScriptHook.cpp">
+      <Filter>GTA\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="GTA\Script\ScriptFiber.cpp">
+      <Filter>GTA\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="D3D\D3DRenderer.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="D3D\D3DScript.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooking\Hooking.cpp">
+      <Filter>Hooking</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooking\NativeHooking.cpp">
+      <Filter>Hooking</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\CustomText.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\Logger.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu\MainScript.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\BytePatch.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\FeatureManager.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Local\Local.cpp">
+      <Filter>Features\Local</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="UI">
+      <UniqueIdentifier>{191618f3-e0ab-40f4-9e28-be0849327a23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{ad1570e8-0f5d-456f-b21e-2c42e64769ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GTA">
+      <UniqueIdentifier>{c661be5b-581f-4272-8a79-8da0923524ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GTA\Invoker">
+      <UniqueIdentifier>{e067e8df-9d60-40ee-af63-b3575372746e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GTA\Script">
+      <UniqueIdentifier>{4ef46d53-314f-44ba-9f67-748f7afdc5cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3D">
+      <UniqueIdentifier>{d243fe6c-5e91-412a-b2ed-34327a072882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hooking">
+      <UniqueIdentifier>{f96606d3-4747-4458-aa41-820d4990dced}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{11384e44-0aaf-4eb3-a7e3-0cceb0067b83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{49c7338a-d49e-44c9-b8b7-73f6fac2514c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{75abe79c-f0e5-4833-8daa-9472a31e4ee8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features">
+      <UniqueIdentifier>{bceae7f1-2dbc-4845-bf6f-a663a67c9c1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Local">
+      <UniqueIdentifier>{e99f922b-7d2d-4203-9133-d7813649a350}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="GTA\Invoker\AssignReturnAddress.asm">
+      <Filter>GTA\Invoker</Filter>
+    </MASM>
+  </ItemGroup>
+</Project>
