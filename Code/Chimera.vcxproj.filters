@@ -264,9 +264,4 @@
       <UniqueIdentifier>{e99f922b-7d2d-4203-9133-d7813649a350}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
-  <ItemGroup>
-    <MASM Include="GTA\Invoker\AssignReturnAddress.asm">
-      <Filter>GTA\Invoker</Filter>
-    </MASM>
-  </ItemGroup>
 </Project>

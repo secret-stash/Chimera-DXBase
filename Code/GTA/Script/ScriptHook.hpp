@@ -1,8 +1,6 @@
 #pragma once 
 #include "../../Hooking/VMTHook.hpp"
 #include "../Invoker/Invoker.hpp"
-#include <GTAV-Classes/script/scrProgram.hpp>
-#include <GTAV-Classes/rage/joaat.hpp>
 
 namespace Chim
 {

@@ -5,13 +5,12 @@ namespace Chim
 {
 	struct Hooks
 	{
-		static int VirtualMemory(void* _this, HANDLE handle, PVOID base_addr, int info_class, MEMORY_BASIC_INFORMATION* info, int size, size_t* return_len);
-
 		static void StatGetInt(rage::scrNativeCallContext* src);
 		static const char* GetLabelText(void* unk, const char* label);
 		static std::uint64_t TaskJumpConstructor(std::uint64_t a1, int a2);
 		static std::uint64_t* FallTaskConstructor(std::uint64_t* _this, std::uint32_t flags);
 		static LRESULT WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+		static void QueueDependency(void* dependency);
 
 		static constexpr auto PresentIndex = 8;
 		static HRESULT Present(IDXGISwapChain* dis, UINT syncInterval, UINT flags);
@@ -43,6 +42,7 @@ namespace Chim
 		void* m_OriginalTaskJumpConstructor{};
 		void* m_OriginalFallTaskConstructor{};
 		void* m_OriginalWndProc{};
+		void* m_OriginalQueueDependency{};
 		VMTHook m_D3DHook;
 	};
 

@@ -28,6 +28,7 @@
 #include <functional>
 #include <iomanip>
 #include <iostream>
+#include <Psapi.h>
 #include <limits>
 #include <memory>
 #include <mutex>
@@ -41,6 +42,7 @@
 #include <vector>
 #include <array>
 #include <ShlObj_core.h>
+#include <classes.hpp>
 
 #define CHIMERA_WIDE_IMPL(str) L ## str
 #define CHIMERA_WIDE(str) CHIMERA_WIDE_IMPL(str)

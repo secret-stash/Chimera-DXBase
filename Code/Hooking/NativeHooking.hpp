@@ -1,8 +1,6 @@
 #pragma once
 #include "../GTA/Invoker/Invoker.hpp"
 #include "../GTA/Script/ScriptHook.hpp"
-#include <GTAV-Classes/script/scrThread.hpp>
-#include <GTAV-Classes/script/scrProgram.hpp>
 
 namespace Chim
 {

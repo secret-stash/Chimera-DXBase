@@ -2,7 +2,6 @@
 #include "../../Game/Game.hpp"
 #include "../../Utility/Logger.hpp"
 
-extern "C" void	_call_asm(void* context, void* function, void* ret);
 namespace Chim
 {
     Invoker::NativeCallContext::NativeCallContext()
@@ -36,8 +35,7 @@ namespace Chim
             {
                 __try
                 {
-                    // Return 0x23 to each native call, R* having a blast rn
-                    _call_asm(&m_CallContext, handler, g_GameVariables->m_AssignReturnAddress);
+                    handler(&m_CallContext);
                     g_GameFunctions->m_FixVectors(&m_CallContext);
                 }
                 __except (EXCEPTION_EXECUTE_HANDLER)

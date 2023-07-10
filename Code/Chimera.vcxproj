@@ -96,9 +96,6 @@
     <ClCompile Include="Utility\CustomText.cpp" />
     <ClCompile Include="Utility\Logger.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <MASM Include="GTA\Invoker\AssignReturnAddress.asm" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{D52E5E73-B8A8-4992-8347-41ABE83D4991}</ProjectGuid>
@@ -116,9 +113,7 @@
     <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Label="Shared">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,6 +124,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)Binaries\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Binaries\$(Configuration)-Intermediates\</IntDir>
+    <IncludePath>$(SolutionDir)Libraries\Include\GTAV-Classes;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -159,7 +155,5 @@
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

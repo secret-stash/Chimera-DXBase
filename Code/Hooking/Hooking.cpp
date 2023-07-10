@@ -13,11 +13,6 @@
 
 namespace Chim
 {
-	int Hooks::VirtualMemory(void* _this, HANDLE handle, PVOID base_addr, int info_class, MEMORY_BASIC_INFORMATION* info, int size, size_t* return_len)
-	{
-		return 1;
-	}
-
 	namespace { std::uint32_t g_HookFrameCount{}; }
 	void Hooks::StatGetInt(rage::scrNativeCallContext* src)
 	{
@@ -66,6 +61,55 @@ namespace Chim
 		return static_cast<decltype(&WndProc)>(g_Hooking->m_OriginalWndProc)(hWnd, msg, wParam, lParam);
 	}
 
+	bool IsAddressInGameRegion(std::uint64_t address)
+	{
+		static std::uint64_t moduleBase = NULL;
+		static std::uint64_t moduleSize = NULL;
+		if ((!moduleBase) || (!moduleSize))
+		{
+			MODULEINFO info;
+			if (!GetModuleInformation(GetCurrentProcess(), GetModuleHandle(0), &info, sizeof(info)))
+			{
+				return true;
+			}
+			else
+			{
+				moduleBase = (std::uint64_t)GetModuleHandle(0);
+				moduleSize = (std::uint64_t)info.SizeOfImage;
+			}
+		}
+		return address > moduleBase && address < (moduleBase + moduleSize);
+	}
+
+	bool IsJumpInstruction(__int64 fptr)
+	{
+		if (!IsAddressInGameRegion(fptr))
+			return false;
+
+		auto value = *(std::uint8_t*)(fptr);
+		return value == 0xE9;
+	}
+
+	bool IsUnwantedDependency(__int64 cb)
+	{
+		auto f1 = *(__int64*)(cb + 0x60);
+		auto f2 = *(__int64*)(cb + 0x100);
+		auto f3 = *(__int64*)(cb + 0x1A0);
+
+		if (!IsAddressInGameRegion(f1) || !IsAddressInGameRegion(f2) || !IsAddressInGameRegion(f3))
+			return false;
+
+		return IsJumpInstruction(f1) || IsJumpInstruction(f2) || IsJumpInstruction(f3);
+	}
+
+	void Hooks::QueueDependency(void* dependency)
+	{
+		if (IsUnwantedDependency((__int64)dependency))
+			return;
+
+		return static_cast<decltype(&QueueDependency)>(g_Hooking->m_OriginalQueueDependency)(dependency);
+	}
+
 	HRESULT Hooks::Present(IDXGISwapChain* dis, UINT syncInterval, UINT flags)
 	{
 		if (g_Running)
@@ -108,6 +152,8 @@ namespace Chim
 		g_Logger->Info("[Hooking] Hooked: FTC");
 		MH_CreateHook(g_GameFunctions->m_WndProc, &Hooks::WndProc, &m_OriginalWndProc);
 		g_Logger->Info("[Hooking] Hooked: WDP");
+		MH_CreateHook(g_GameFunctions->m_QueueDependency, &Hooks::QueueDependency, &m_OriginalQueueDependency);
+		g_Logger->Info("[Hooking] Hooked: QD");
 
 		m_D3DHook.Hook(&Hooks::Present, Hooks::PresentIndex);
 		m_D3DHook.Hook(&Hooks::ResizeBuffers, Hooks::ResizeBuffersIndex);
@@ -115,6 +161,8 @@ namespace Chim
 
 	Hooking::~Hooking() noexcept
 	{
+		MH_RemoveHook(g_GameFunctions->m_QueueDependency);
+		g_Logger->Info("[Hooking] Unhooked: QD");
 		MH_RemoveHook(g_GameFunctions->m_WndProc);
 		g_Logger->Info("[Hooking] Unhooked: WDP");
 		MH_RemoveHook(g_GameFunctions->m_FallTaskConstructor);

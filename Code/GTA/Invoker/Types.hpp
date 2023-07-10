@@ -17,23 +17,6 @@ using Camera = Entity;
 using ScrHandle = Entity;
 
 #pragma pack(push, 1)
-struct Vector2
-{
-	float x{};
-	float y{};
-};
-#pragma pack(pop)
-
-#pragma pack(push, 1)
-struct Vector3
-{
-	float x{};
-	float y{};
-	float z{};
-};
-#pragma pack(pop)
-
-#pragma pack(push, 1)
 struct NativeVector3
 {
 public:

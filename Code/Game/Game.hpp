@@ -1,17 +1,6 @@
 #pragma once
 #include "BytePatch.hpp"
 
-// GTA-V
-#include <GTAV-Classes/script/scrProgramTable.hpp>
-#include <GTAV-Classes/script/scrNativeHandler.hpp>
-#include <GTAV-Classes/script/scrNativeRegistration.hpp>
-#include <GTAV-Classes/script/scrNativeRegistrationTable.hpp>
-#include <GTAV-Classes/ped/CPedFactory.hpp>
-#include <GTAV-Classes/ped/CPed.hpp>
-#include <GTAV-Classes/player/CPlayerInfo.hpp>
-#include <GTAV-Classes/network/CNetworkPlayerMgr.hpp>
-#include <GTAV-Classes/network/CNetGamePlayer.hpp>
-
 namespace Chim
 {
 	class GameVariables
@@ -31,7 +20,6 @@ namespace Chim
 		IDXGISwapChain* m_Swapchain;
 		rage::scrProgramTable* m_ScriptProgramTable;
 		rage::scrNativeRegistrationTable* m_NativeRegistrationTable;
-		void** m_AssignReturnAddress;
 		std::int64_t** m_GlobalBase;
 		CPedFactory** m_PedFactory;
 		CNetworkPlayerMgr** m_NetworkPlayerMgr;
@@ -63,6 +51,9 @@ namespace Chim
 
 		using WndProc = LRESULT(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 		WndProc* m_WndProc;
+
+		using QueueDependency = void(void* dependency);
+		QueueDependency* m_QueueDependency;
 
 		using GetNativeHandler = rage::scrNativeHandler(rage::scrNativeRegistrationTable*, rage::scrNativeHash);
 		GetNativeHandler* m_GetNativeHandler;

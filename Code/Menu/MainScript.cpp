@@ -14,8 +14,6 @@
 #include "../UI/RegularSubmenu.hpp"
 #include "../UI/PlayerSubmenu.hpp"
 #include "../Features/Local/Local.hpp"
-#include <GTAV-Classes/network/CNetGamePlayer.hpp>
-#include <GTAV-Classes/network/netPlayer.hpp>
 
 namespace Chim
 {
@@ -205,12 +203,12 @@ namespace Chim
 		{
 			if (*g_GameVariables->m_IsSessionStarted)
 			{
-				const auto NetPlayerMgr = *g_GameVariables->m_NetworkPlayerMgr;
+				const auto& NetPlayerMgr = *g_GameVariables->m_NetworkPlayerMgr;
 
 				if (NetPlayerMgr == nullptr)
 					return;
 
-				for (const auto Player : NetPlayerMgr->m_player_list)
+				for (const auto& Player : NetPlayerMgr->m_player_list)
 				{
 					if (Player != nullptr)
 					{
